@@ -9,16 +9,21 @@ const expiredName = "auth.expired_at";
 http.defaults.baseURL = "http://localhost:8000/api";
 
 function applyToken(token, expiredIn) {
-  http.defaults.headers["Authorization"] = token;
+  if (token === undefined) {
+    token = localStorage.getItem(tokenName);
+  }
 
-  // Store token
+  // Pair token && store it to local storage
+  http.defaults.headers["Authorization"] = token;
   localStorage.setItem(tokenName, token);
 
-  const date = new Date();
-  date.setSeconds(expiredIn);
+  if (expiredIn !== undefined) {
+    const date = new Date();
+    date.setSeconds(expiredIn);
 
-  // Store expired date
-  localStorage.setItem(expiredName, date);
+    // Store expired date
+    localStorage.setItem(expiredName, date);
+  }
 }
 
 function removeToken() {
