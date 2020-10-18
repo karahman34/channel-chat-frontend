@@ -8,7 +8,30 @@ const routes = [
   {
     path: "/",
     name: "Home",
+    meta: {
+      auth: true
+    },
     component: Home
+  },
+  {
+    path: "/login",
+    name: "Login",
+    meta: {
+      title: "Login",
+      layout: "auth",
+      guest: true
+    },
+    component: () => import("../views/Login.vue")
+  },
+  {
+    path: "/register",
+    name: "Register",
+    meta: {
+      title: "Register",
+      layout: "auth",
+      guest: true
+    },
+    component: () => import("../views/Register.vue")
   }
 ];
 
