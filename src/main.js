@@ -11,6 +11,9 @@ import http, {
   applyToken
 } from "./plugins/http";
 
+// Initialize laravel echo
+import "./plugins/echo";
+
 Vue.config.productionTip = false;
 
 Vue.use(http);

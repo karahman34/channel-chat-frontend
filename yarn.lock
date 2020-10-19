@@ -5348,6 +5348,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.npm.taobao.org/kind-of/download/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
 
+laravel-echo@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/laravel-echo/-/laravel-echo-1.9.0.tgz#c22fe7477a96d64f9ccd8f683afecf9bb89b30e9"
+  integrity sha512-+kw4mjwnMY2KXdKPpd5lHba8CNmYj9QzotK+E42Oz8B6flKViwkP+BQvahWTKxpkFwt5O2Iejk/etgQH6DhobQ==
+
 launch-editor-middleware@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/launch-editor-middleware/download/launch-editor-middleware-2.2.1.tgz#e14b07e6c7154b0a4b86a0fd345784e45804c157"
@@ -7068,6 +7073,13 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.npm.taobao.org/punycode/download/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
 
+pusher-js@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/pusher-js/-/pusher-js-7.0.0.tgz#9716ae3f79ca7f87a269764f278a8e14494a4e20"
+  integrity sha512-2ZSw8msMe6EKNTebQSthRInrWUK9bo3zXPmQx0bfeDFJdSnTWUROhdAhmpRQREHzqrL+l4imv/3uwgIQHUO0oQ==
+  dependencies:
+    tweetnacl "^1.0.3"
+
 q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.npm.taobao.org/q/download/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
@@ -8462,6 +8474,11 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.npm.taobao.org/tweetnacl/download/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
+
+tweetnacl@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
+  integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
 
 type-check@~0.3.2:
   version "0.3.2"
