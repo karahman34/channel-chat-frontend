@@ -12,7 +12,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    this.$vuetify.theme.dark = false;
+  }
+};
 </script>
 
 <style lang="scss" scoped>
