@@ -32,6 +32,15 @@ const routes = [
       guest: true
     },
     component: () => import("../views/Register.vue")
+  },
+  {
+    path: "/profile",
+    name: "User.Profile",
+    meta: {
+      title: "Profile",
+      auth: true
+    },
+    component: () => import("../views/Profile.vue")
   }
 ];
 

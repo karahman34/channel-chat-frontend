@@ -6,10 +6,10 @@ export default {
   register(payload) {
     return http.post(`${prefix}/register`, payload);
   },
+  update(id, payload) {
+    return http.post(`${prefix}/${id}`, payload);
+  },
   changePassword(id, payload) {
     return http.post(`${prefix}/${id}/password`, payload);
-  },
-  changeAvatar(id, payload) {
-    return http.post(`${prefix}/${id}/avatar`, payload);
   }
 };
