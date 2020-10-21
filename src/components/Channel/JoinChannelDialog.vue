@@ -21,7 +21,9 @@
           <v-text-field v-model="form.channel" label="Channel"></v-text-field>
 
           <!-- Join Button -->
-          <v-btn type="submit" color="success">Join</v-btn>
+          <v-btn type="submit" color="success" :disabled="form.channel === null"
+            >Join</v-btn
+          >
         </v-form>
       </v-card-text>
     </v-card>
