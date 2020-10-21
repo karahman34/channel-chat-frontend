@@ -15,7 +15,7 @@
         <!-- The Header -->
         <conversation-header
           :channel="channel"
-          @clear="clearConversations()"
+          @clear="resetConversations()"
           @change-channel="joinChannelDialog = true"
         ></conversation-header>
       </v-card-title>
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapMutations, mapState } from "vuex";
 import Conversations from "@/components/Conversation/Conversations";
 import ConversationHeader from "@/components/Conversation/Header";
 import ConversationInput from "@/components/Conversation/Input";
@@ -61,8 +61,6 @@ export default {
 
   data() {
     return {
-      channel: null,
-      conversations: [],
       joinChannelDialog: false
     };
   },
@@ -70,6 +68,10 @@ export default {
   computed: {
     ...mapState("auth", {
       auth: state => state.user
+    }),
+    ...mapState("conversations", {
+      channel: state => state.channel,
+      conversations: state => state.conversations
     }),
     currentChannel() {
       return `chat.${this.channel}`;
@@ -85,20 +87,25 @@ export default {
   },
 
   methods: {
+    ...mapMutations("conversations", {
+      setChannel: "SET_CHANNEL",
+      pushConversation: "PUSH_CONVERSATION",
+      clearConversations: "CLEAR_CONVERSATIONS"
+    }),
     listenNewMessage() {
       window.Echo.private(this.currentChannel).listen(".new-message", event => {
-        this.conversations.push(event);
+        this.pushConversation(event);
       });
     },
     joinChannel(newChannel) {
       this.leaveChannel();
       this.$nextTick(() => {
-        this.conversations.push({
+        this.pushConversation({
           message: `You have joined channel #${newChannel}`,
           alert: true
         });
 
-        this.channel = parseInt(newChannel);
+        this.setChannel(parseInt(newChannel));
         this.listenNewMessage();
         this.joinChannelDialog = false;
       });
@@ -106,12 +113,13 @@ export default {
     leaveChannel() {
       window.Echo.leave(this.currentChannel);
     },
-    clearConversations() {
+    resetConversations() {
       const lastAlert = this.conversations.filter(
         conversation => conversation.alert
       );
 
-      this.conversations = [lastAlert[lastAlert.length - 1]];
+      this.clearConversations();
+      this.pushConversation(lastAlert[lastAlert.length - 1]);
     }
   }
 };
