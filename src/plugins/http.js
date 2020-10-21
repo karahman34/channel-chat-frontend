@@ -6,7 +6,7 @@ const tokenName = "auth.token";
 const expiredName = "auth.expired_at";
 
 // Set base url
-http.defaults.baseURL = "http://localhost:8000/api";
+http.defaults.baseURL = process.env.VUE_APP_BASE_URL;
 
 function applyToken(token, expiredIn) {
   if (token === undefined) {
