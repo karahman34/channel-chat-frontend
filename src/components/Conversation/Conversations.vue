@@ -82,11 +82,17 @@ export default {
   .alert {
     text-align: center;
     font-weight: 700;
-    width: 50%;
+    width: 95%;
     margin: 0 auto;
     padding: 6px 0;
     background-color: #ff5722;
     border-radius: 25px;
+  }
+
+  @media screen and (min-width: 950px) {
+    .alert {
+      width: 50%;
+    }
   }
 
   .avatar {
