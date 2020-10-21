@@ -21,7 +21,13 @@
       <!-- Delete -->
       <v-tooltip top>
         <template v-slot:activator="{ on }">
-          <v-btn icon class="ml-2" v-on="on" @click="clearConversations">
+          <v-btn
+            id="delete-conversations"
+            icon
+            class="ml-2"
+            v-on="on"
+            @click="clearConversations"
+          >
             <v-icon>mdi mdi-trash-can</v-icon>
           </v-btn>
         </template>
@@ -51,3 +57,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#delete-conversations:hover {
+  background-color: #e53935 !important;
+}
+</style>
