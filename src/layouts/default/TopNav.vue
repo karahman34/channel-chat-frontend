@@ -1,8 +1,8 @@
 <template>
   <div class="d-flex justify-space-between align-center">
-    <h2>
+    <router-link id="app-title" to="/">
       {{ appTitle }}
-    </h2>
+    </router-link>
 
     <!-- Right -->
     <div class="d-flex justify-space-between align-center">
@@ -72,6 +72,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#app-title {
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+}
+
 .divider {
   width: 2px;
   height: 15px;
