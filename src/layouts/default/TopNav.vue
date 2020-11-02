@@ -1,7 +1,14 @@
 <template>
   <div class="d-flex justify-space-between align-center">
-    <router-link id="app-title" to="/">
+    <!-- App Title -->
+    <span v-if="$route.fullPath === '/'" id="app-title">
       {{ appTitle }}
+    </span>
+
+    <!-- Go Back Home -->
+    <router-link v-else to="/" id="btn-back-home">
+      <v-icon>mdi mdi-arrow-left</v-icon>
+      <span class="ml-2">Profile</span>
     </router-link>
 
     <!-- Right -->
@@ -44,6 +51,11 @@ export default {
     }),
     appTitle() {
       return process.env.VUE_APP_TITLE;
+    },
+    headerLink() {
+      const route = this.$route;
+      console.log(route);
+      return route;
     }
   },
 
@@ -75,8 +87,14 @@ export default {
 #app-title {
   font-size: 24px;
   font-weight: 500;
-  text-decoration: none;
   color: white;
+}
+
+#btn-back-home {
+  color: white;
+  font-size: 19px;
+  text-decoration: none;
+  border-bottom: none;
 }
 
 .divider {

@@ -9,7 +9,7 @@
     <v-card>
       <v-card-title>
         <v-icon>mdi mdi-account</v-icon>
-        <span class="ml-2">Profiile</span>
+        <span class="ml-2">Edit Profile</span>
       </v-card-title>
 
       <v-card-text>
