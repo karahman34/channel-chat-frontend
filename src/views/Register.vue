@@ -123,9 +123,7 @@ export default {
         applyToken(`Bearer ${access_token}`, expired_in);
 
         // Go to home
-        this.$router.push({
-          name: "Home"
-        });
+        window.location.href = "/";
       } catch (err) {
         const statusCode = parseInt(err?.response?.status);
 

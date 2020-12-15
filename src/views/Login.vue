@@ -99,9 +99,7 @@ export default {
         await this.loginAction(this.form);
 
         // Go to home
-        this.$router.push({
-          name: "Home"
-        });
+        window.location.href = "/";
       } catch (err) {
         const statusCode = parseInt(err?.response?.status);
 
