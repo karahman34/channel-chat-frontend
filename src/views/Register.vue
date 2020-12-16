@@ -123,7 +123,8 @@ export default {
         applyToken(`Bearer ${access_token}`, expired_in);
 
         // Go to home
-        window.location.href = "/";
+        const homeRoute = process.env.VUE_APP_URL;
+        window.location.href = `${homeRoute}/`;
       } catch (err) {
         const statusCode = parseInt(err?.response?.status);
 

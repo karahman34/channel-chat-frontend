@@ -99,7 +99,8 @@ export default {
         await this.loginAction(this.form);
 
         // Go to home
-        window.location.href = "/";
+        const homeRoute = process.env.VUE_APP_URL;
+        window.location.href = `${homeRoute}/`;
       } catch (err) {
         const statusCode = parseInt(err?.response?.status);
 
