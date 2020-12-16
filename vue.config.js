@@ -1,4 +1,5 @@
 module.exports = {
   transpileDependencies: ["vuetify"],
-  publicPath: "/channel-chat-frontend/"
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/channel-chat-frontend/" : "/"
 };
