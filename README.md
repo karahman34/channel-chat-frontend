@@ -1,9 +1,5 @@
 # chat-frontend
 
-## Demo
-
-https://karahman34.github.io/channel-chat-frontend/
-
 ## Project setup
 
 ```
